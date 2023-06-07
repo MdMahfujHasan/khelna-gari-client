@@ -1,9 +1,14 @@
 import React, { useContext } from 'react';
 import SocialLogin from './SocialLogin';
 import { AuthContext } from '../../providers/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, setUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const handleLogin = event => {
         event.preventDefault();
@@ -13,7 +18,16 @@ const Login = () => {
 
         signIn(email, password)
             .then(result => {
-                console.log(result)
+                navigate(from, { replace: true })
+                setUser(result.user);
+                form.reset();
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `${error.message}`
+                })
             })
     }
     return (
@@ -32,6 +46,7 @@ const Login = () => {
                                 placeholder="Your email"
                                 name="email"
                                 className="input input-bordered"
+                                required
                             />
                         </div>
                         <div className="form-control">
@@ -43,6 +58,7 @@ const Login = () => {
                                 placeholder="Your password"
                                 name="password"
                                 className="input input-bordered"
+                                required
                             />
                         </div>
                         <input

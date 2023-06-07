@@ -4,7 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, setUser } = useContext(AuthContext);
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -18,7 +18,7 @@ const SignUp = () => {
             .then(result => {
                 result.user.displayName = name;
                 result.user.photoURL = photo;
-                const user = result.user;
+                setUser(result.user);
                 Swal.fire(
                     'Sweet',
                     'Account created successfully!',
@@ -52,6 +52,7 @@ const SignUp = () => {
                                 placeholder="Your full name"
                                 name="name"
                                 className="input input-bordered"
+                                required
                             />
                         </div>
                         <div className="form-control">
@@ -62,6 +63,7 @@ const SignUp = () => {
                                 placeholder="Your email address"
                                 name="email"
                                 className="input input-bordered"
+                                required
                             />
                         </div>
                         <div className="form-control">
@@ -73,6 +75,7 @@ const SignUp = () => {
                                 placeholder="Your password"
                                 name="password"
                                 className="input input-bordered"
+                                required
                             />
                         </div>
                         <div className="form-control">

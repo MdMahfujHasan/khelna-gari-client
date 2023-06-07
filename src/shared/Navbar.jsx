@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import defaultUser from '../assets/default-user.png';
+import { FiLogOut, FiSettings, FiUser } from 'react-icons/fi';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -45,14 +46,15 @@ const Navbar = () => {
                     <ActiveLink to="/add-toy">Add a Toy</ActiveLink>
                 </>}
                 <ActiveLink to="/blogs">Blogs</ActiveLink>
-                {!user && <>
+                {!user ? <>
                     <ActiveLink to="/login">Login</ActiveLink>
                     <ActiveLink to="/sign-up">Sign Up</ActiveLink>
-                </>}
+                </> :
+                    <button className='bg-rose-400 px-1.5 text-white rounded font-medium' onClick={handleSignOut}>Log out</button>}
             </div>
             <div>
                 <div className="form-control">
-                    <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+                    <input type="text" placeholder="Search" className="input border-0 focus:outline-none w-full md:w-auto" />
                 </div>
                 {user && <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -60,10 +62,10 @@ const Navbar = () => {
                             <img title={user.displayName} src={user.photoURL ? user.photoURL : defaultUser} />
                         </div>
                     </label>
-                    <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                        <li><a>Profile</a></li>
-                        <li><a>Settings</a></li>
-                        <li><button onClick={handleSignOut}>Logout</button></li>
+                    <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 ms-4">
+                        <li><a><FiUser /> Profile</a></li>
+                        <li><a><FiSettings /> Settings</a></li>
+                        <li><button onClick={handleSignOut}><FiLogOut /> Logout</button></li>
                     </ul>
                 </div>}
             </div>
