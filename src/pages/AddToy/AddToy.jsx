@@ -67,6 +67,7 @@ const AddToy = () => {
                         placeholder="Your name"
                         name="sellerName"
                         className="input input-bordered input-accent w-full max-w-xs focus:outline-0"
+                        defaultValue={user.displayName ? user.displayName : ''}
                         required
                     />
                 </div>
