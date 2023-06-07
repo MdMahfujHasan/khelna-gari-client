@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ToyTable = ({ toy, length }) => {
-    const { toyName, sellerName, toyPrice, quantity, photoURL, subCategory } = toy;
+    const { _id, toyName, sellerName, toyPrice, quantity, photoURL, subCategory } = toy;
     return ( //description, email, rating
         <div className='flex justify-around border border-slate-200'>
             <td>
@@ -12,9 +13,11 @@ const ToyTable = ({ toy, length }) => {
             <td className='font-semibold text-base text-slate-500 w-36'>{sellerName}</td>
             <td className='font-semibold text-base text-slate-500 w-36'>${toyPrice}</td>
             <td className='font-semibold text-base text-slate-500 w-36 py-1'>{quantity}</td>
-            <td className='w-24'>
-                <button className='btn'>View Details</button>
-            </td>
+            <Link to={`/all-toys/${_id}`}>
+                <td className='w-24'>
+                    <button className='btn'>View Details</button>
+                </td>
+            </Link>
         </div >
     );
 };
