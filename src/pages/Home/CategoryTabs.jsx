@@ -14,19 +14,19 @@ const MyTabs = () => {
         fetch('http://localhost:5000/category1')
             .then(res => res.json())
             .then(data => setCategory1(data))
-    })
+    }, [])
 
     useEffect(() => {
         fetch('http://localhost:5000/category2')
             .then(res => res.json())
             .then(data => setCategory2(data))
-    })
+    }, [])
 
     useEffect(() => {
         fetch('http://localhost:5000/category3')
             .then(res => res.json())
             .then(data => setCategory3(data))
-    })
+    }, [])
     return (
         <div>
             <h2 className='text-4xl text-center font-serif font-extrabold text-teal-500 mt-10 mb-8'>Shop by Category</h2>

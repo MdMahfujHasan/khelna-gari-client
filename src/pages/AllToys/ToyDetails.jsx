@@ -16,9 +16,10 @@ const ToyDetails = () => {
                 </div>
                 <p>{description}</p>
                 <div className="card-actions justify-end">
-                    <div className="badge badge-outline">{subCategory}</div>
-                    <div className="badge badge-outline flex items-center"><span><b>Rating:</b> {rating}</span> <FaStar className='text-yellow-400' /></div>
-                    <div className="badge badge-outline"><b>Quantity:</b> {quantity}</div>
+                    <div className="badge badge-primary">{subCategory}</div>
+                    <div className="badge badge-outline">{email}</div>
+                    <div className="badge badge-outline flex items-center"><span><b>Rating: </b>{rating}</span> <FaStar className='text-yellow-400' /></div>
+                    <div className="badge badge-outline"><b>Quantity: </b>{quantity}</div>
                 </div>
             </div>
         </div>

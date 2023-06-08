@@ -4,8 +4,6 @@ import Swal from 'sweetalert2';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
-    const [success, setSuccess] = useState('');
-    const [error, setError] = useState('');
 
     const handleAddToy = event => {
         event.preventDefault();
@@ -40,6 +38,12 @@ const AddToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                form.reset();
+                Swal.fire(
+                    'Awesome!',
+                    "You've successfully added a toy",
+                    'success'
+                )
             })
     }
     return (

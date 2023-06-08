@@ -1,5 +1,4 @@
 import React from 'react';
-import cover from '../../assets/gallery-cover.jpg';
 
 const GalleryCard = ({ item }) => {
     const { name, img } = item;

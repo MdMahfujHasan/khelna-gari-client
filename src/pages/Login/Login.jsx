@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import SocialLogin from './SocialLogin';
 import { AuthContext } from '../../providers/AuthProvider';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Login = () => {
@@ -67,6 +67,7 @@ const Login = () => {
                             className="btn bg-teal-500 hover:bg-teal-600 text-white mt-3"
                         />
                     </form>
+                    <p className='text-center text-slate-700 font-semibold font-sans'>New user? <Link className='text-blue-500 hover:underline' to="/sign-up">Sign Up</Link></p>
                     <SocialLogin></SocialLogin>
                 </div>
             </div>
