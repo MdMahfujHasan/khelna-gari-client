@@ -1,32 +1,10 @@
 import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
-import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
-const MyToysRow = ({ myToy }) => {
-    const handleDelete = id => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`http://localhost:5000/allToys/${_id}`, {
-                    method: 'DELETE'
-                })
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-            }
-        })
-    }
-
+const MyToysRow = ({ myToy, handleDelete }) => {
     const { _id, toyName, sellerName, toyPrice, quantity, photoURL, subCategory, description, email, rating } = myToy;
+
     return (
         <tr>
             <td>
@@ -58,7 +36,9 @@ const MyToysRow = ({ myToy }) => {
                 <span className="badge badge-sm">{rating} <AiFillStar className='text-yellow-500' /></span>
             </td>
             <th className='space-x-2'>
-                <button className="btn btn-success text-white btn-xs">Update</button>
+                <Link to={`/my-toys/update/${_id}`}>
+                    <button className="btn btn-success text-white btn-xs">Update</button>
+                </Link>
                 <button onClick={() => handleDelete(_id)} className="btn btn-error text-white btn-xs">Delete</button>
             </th>
         </tr>

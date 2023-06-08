@@ -41,22 +41,19 @@ const Navbar = () => {
             <div className='space-x-6 flex flex-col lg:flex-row gap-4'>
                 <ActiveLink to="/">Home</ActiveLink>
                 <ActiveLink to="/all-toys">All Toys</ActiveLink>
-                {user && <>
+                {user ? <>
                     <ActiveLink to="/my-toys">My Toys</ActiveLink>
                     <ActiveLink to="/add-toy">Add a Toy</ActiveLink>
-                </>}
-                <ActiveLink to="/blogs">Blogs</ActiveLink>
-                {!user ? <>
-                    <ActiveLink to="/login">Login</ActiveLink>
-                    <ActiveLink to="/sign-up">Sign Up</ActiveLink>
                 </> :
-                    <button className='bg-rose-400 px-1.5 text-white rounded font-medium' onClick={handleSignOut}>Log out</button>}
+                    <>
+                        <ActiveLink to="/login">Login</ActiveLink>
+                        <ActiveLink to="/sign-up">Sign Up</ActiveLink>
+                    </>}
+                <ActiveLink to="/blogs">Blogs</ActiveLink>
+
             </div>
             <div>
-                <div className="form-control">
-                    <input type="text" placeholder="Search" className="input border-0 focus:outline-none w-full md:w-auto" />
-                </div>
-                {user && <div className="dropdown dropdown-end">
+                {user && <div className="dropdown dropdown-left z-10">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img title={user.displayName} src={user.photoURL ? user.photoURL : defaultUser} />

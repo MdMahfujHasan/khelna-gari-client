@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -192,7 +192,7 @@ const AddToy = () => {
                 </div>
             </div>
 
-            <div className='flex items-center flex-col'>
+            <div className='flex items-center flex-col mb-3'>
                 <input className='btn bg-teal-400 hover:bg-teal-500 w-1/5 text-white' type="submit" value="Add Toy" />
             </div>
         </form >
