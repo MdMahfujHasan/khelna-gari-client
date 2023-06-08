@@ -29,7 +29,7 @@ const AddToy = () => {
             photoURL: photo,
             subCategory
         }
-        fetch('http://localhost:5000/allToys', {
+        fetch('https://khelna-gari-server.vercel.app/allToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -76,7 +76,6 @@ const AddToy = () => {
                             placeholder="Your name"
                             name="sellerName"
                             className="input input-bordered input-accent w-full max-w-xs focus:outline-0"
-                            defaultValue={user.displayName ? user.displayName : ''}
                             required
                         />
                     </div>
@@ -89,7 +88,7 @@ const AddToy = () => {
                             type="email"
                             placeholder="Your email"
                             name="email"
-                            className="input input-bordered input-accent w-full max-w-xs focus:outline-0 text-slate-700 font-semibold bg-slate-50"
+                            className="input input-bordered input-accent w-full max-w-xs focus:outline-0"
                             defaultValue={user.email}
                             readOnly
                         />

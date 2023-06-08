@@ -11,19 +11,19 @@ const MyTabs = () => {
     const [category3, setCategory3] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/category1')
+        fetch('https://khelna-gari-server.vercel.app/category1')
             .then(res => res.json())
             .then(data => setCategory1(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/category2')
+        fetch('https://khelna-gari-server.vercel.app/category2')
             .then(res => res.json())
             .then(data => setCategory2(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/category3')
+        fetch('https://khelna-gari-server.vercel.app/category3')
             .then(res => res.json())
             .then(data => setCategory3(data))
     }, [])

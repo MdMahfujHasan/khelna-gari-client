@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const toyDetails = useLoaderData();
 
@@ -31,7 +33,7 @@ const UpdateToy = () => {
             subCategory
         }
 
-        fetch(`http://localhost:5000/allToys/${toyDetails._id}`, {
+        fetch(`https://khelna-gari-server.vercel.app/allToys/${toyDetails._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -40,7 +42,14 @@ const UpdateToy = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                if (data.modifiedCount > 0) {
+                    Swal.fire(
+                        'Great!',
+                        "Your toy has been updated",
+                        'success'
+                    )
+                    navigate("/my-toys");
+                }
             })
     }
     return (

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ToyTable = ({ toy, length }) => {
     const { _id, toyName, sellerName, toyPrice, quantity, photoURL, subCategory } = toy;
-    return ( //description, email, rating
+    return (
         <div className='flex justify-around border border-slate-200'>
             <td>
                 <img src={photoURL} className='h-16 w-20' alt="Toy photo" />

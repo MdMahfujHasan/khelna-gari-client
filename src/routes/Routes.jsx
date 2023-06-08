@@ -35,17 +35,17 @@ const router = createBrowserRouter([
             {
                 path: "remoteControlCars/:id",
                 element: <PrivateRoute><Category1Card></Category1Card></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category1/${params.id}`)
+                loader: ({ params }) => fetch(`https://khelna-gari-server.vercel.app/category1/${params.id}`)
             },
             {
                 path: "constructionAndBuildingCars/:id",
                 element: <PrivateRoute><Category2Card></Category2Card></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category2/${params.id}`)
+                loader: ({ params }) => fetch(`https://khelna-gari-server.vercel.app/category2/${params.id}`)
             },
             {
                 path: "transformingCars/:id",
                 element: <PrivateRoute><Category3Card></Category3Card></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category3/${params.id}`)
+                loader: ({ params }) => fetch(`https://khelna-gari-server.vercel.app/category3/${params.id}`)
             },
             {
                 path: "add-toy",
@@ -54,12 +54,12 @@ const router = createBrowserRouter([
             {
                 path: "all-toys",
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/allToys')
+                loader: () => fetch('https://khelna-gari-server.vercel.app/allToys')
             },
             {
                 path: "all-toys/:id",
                 element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allToys/${params.id}`)
+                loader: ({ params }) => fetch(`https://khelna-gari-server.vercel.app/allToys/${params.id}`)
             },
             {
                 path: "my-toys",
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
             {
                 path: "my-toys/update/:id",
                 element: <UpdateToy></UpdateToy>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allToys/${params.id}`)
+                loader: ({ params }) => fetch(`https://khelna-gari-server.vercel.app/allToys/${params.id}`)
             },
             {
                 path: "blogs",
