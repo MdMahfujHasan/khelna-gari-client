@@ -3,6 +3,7 @@ import SocialLogin from './SocialLogin';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const { signIn, setUser } = useContext(AuthContext);
@@ -31,47 +32,52 @@ const Login = () => {
             })
     }
     return (
-        <div className="min-h-screen bg-base-200">
-            <div className="hero-content flex-col">
-                <div className="text-center">
-                    <h1 className="text-2xl font-bold">Login</h1>
-                </div>
-                <div className="w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleLogin} className="card-body">
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input type="email"
-                                placeholder="Your email"
-                                name="email"
-                                className="input input-bordered"
-                                required
-                            />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
+        <>
+            <Helmet>
+                <title>Login | Khelna Gari</title>
+            </Helmet>
+            <div className="min-h-screen bg-base-200">
+                <div className="hero-content flex-col">
+                    <div className="text-center">
+                        <h1 className="text-2xl font-bold">Login</h1>
+                    </div>
+                    <div className="w-full max-w-sm shadow-2xl bg-base-100">
+                        <form onSubmit={handleLogin} className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="email"
+                                    placeholder="Your email"
+                                    name="email"
+                                    className="input input-bordered"
+                                    required
+                                />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input
+                                    type="password"
+                                    placeholder="Your password"
+                                    name="password"
+                                    className="input input-bordered"
+                                    required
+                                />
+                            </div>
                             <input
-                                type="password"
-                                placeholder="Your password"
-                                name="password"
-                                className="input input-bordered"
-                                required
+                                type="submit"
+                                value="Login"
+                                className="btn bg-teal-500 hover:bg-teal-600 text-white mt-3"
                             />
-                        </div>
-                        <input
-                            type="submit"
-                            value="Login"
-                            className="btn bg-teal-500 hover:bg-teal-600 text-white mt-3"
-                        />
-                    </form>
-                    <p className='text-center text-slate-700 font-semibold font-sans'>New user? <Link className='text-blue-500 hover:underline' to="/sign-up">Sign Up</Link></p>
-                    <SocialLogin></SocialLogin>
+                        </form>
+                        <p className='text-center text-slate-700 font-semibold font-sans'>New user? <Link className='text-blue-500 hover:underline' to="/sign-up">Sign Up</Link></p>
+                        <SocialLogin></SocialLogin>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

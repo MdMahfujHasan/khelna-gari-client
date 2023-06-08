@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import MyToysRow from './MyToysRow';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
@@ -45,28 +46,33 @@ const MyToys = () => {
     }
 
     return (
-        <div className="overflow-x-auto">
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Toy Name</th>
-                        <th>Toy Name</th>
-                        <th>Sub-category</th>
-                        <th>Price</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        myToys.map(myToy => <MyToysRow
-                            key={myToy._id}
-                            myToy={myToy}
-                            handleDelete={handleDelete}
-                        ></MyToysRow>)
-                    }
-                </tbody>
-            </table>
-        </div>
+        <>
+            <Helmet>
+                <title>My Toys | Khelna Gari</title>
+            </Helmet>
+            <div className="overflow-x-auto">
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>Toy Name</th>
+                            <th>Toy Name</th>
+                            <th>Sub-category</th>
+                            <th>Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            myToys.map(myToy => <MyToysRow
+                                key={myToy._id}
+                                myToy={myToy}
+                                handleDelete={handleDelete}
+                            ></MyToysRow>)
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </>
     );
 };
 

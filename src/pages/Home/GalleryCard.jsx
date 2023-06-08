@@ -3,7 +3,7 @@ import React from 'react';
 const GalleryCard = ({ item }) => {
     const { name, img } = item;
     return (
-        <div>
+        <div data-aos="fade-up">
             <div className="card card-compact w-80 bg-teal-50 h-80 shadow-xl">
                 <figure><img src={img} alt="Toys" /></figure>
                 <div className="card-body">

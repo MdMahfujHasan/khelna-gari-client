@@ -12,8 +12,8 @@ const Banner = () => {
         <div className='relative'>
             {wave}
             <div className='ms-20 absolute top-10 flex justify-between items-center'>
-                <h3 className='text-7xl text-teal-400 font-extrabold w-1/2'>Fuel your little one's imagination with our awesome car toy collection!</h3>
-                <img className='w-1/2' src={banner} alt="Kid playing" />
+                <h3 data-aos="fade-right" className='text-7xl text-teal-400 font-extrabold w-1/2'>Fuel your little one's imagination with our awesome car toy collection!</h3>
+                <img data-aos="fade-left" className='w-1/2' src={banner} alt="Kid playing" />
             </div>
         </div>
     );

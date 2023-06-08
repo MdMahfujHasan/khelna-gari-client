@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ToyTable from './ToyTable';
+import { Helmet } from 'react-helmet';
 
 const AllToys = () => {
     const [search, setSearch] = useState('');
@@ -8,6 +9,9 @@ const AllToys = () => {
     console.log(allToys)
     return (
         <div>
+            <Helmet>
+                <title>All Toys | Khelna Gari</title>
+            </Helmet>
             <div className='flex justify-center items-center'>
                 <input
                     onChange={(e) => setSearch(e.target.value)}
