@@ -32,7 +32,7 @@ const UpdateToy = () => {
         }
 
         fetch(`http://localhost:5000/allToys/${toyDetails._id}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
