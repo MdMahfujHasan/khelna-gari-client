@@ -165,30 +165,33 @@ const AddToy = () => {
                     <label className="label">
                         <span className="label-text">Sub-Category</span>
                     </label>
-                    <div className="flex">
-                        <div className="flex">
+                    <div className="flex gap-4">
+                        <div className="flex items-center">
                             <input
                                 type="radio"
                                 name="subCategory"
                                 value="Remote Control Cars"
+                                className="radio radio-accent"
                                 required
                             />
                             <label className="label">Remote Control Cars</label>
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                             <input
                                 type="radio"
                                 name="subCategory"
                                 value="Construction and Building Cars"
+                                className="radio radio-accent"
                                 required
                             />
                             <label className="label">Construction and Building Cars</label>
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                             <input
                                 type="radio"
                                 name="subCategory"
                                 value="Transforming Cars"
+                                className="radio radio-accent"
                                 required
                             />
                             <label className="label">Transforming Cars</label>

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 const Blogs = () => {
     return (
-        <div className='container mx-auto mt-6'>
+        <div className='container mx-auto mt-6 mb-5'>
             <Helmet>
                 <title>Blogs | Khelna Gari</title>
             </Helmet>

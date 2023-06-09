@@ -72,8 +72,9 @@ const Login = () => {
                                 className="btn bg-teal-500 hover:bg-teal-600 text-white mt-3"
                             />
                         </form>
-                        <p className='text-center text-slate-700 font-semibold font-sans'>New user? <Link className='text-blue-500 hover:underline' to="/sign-up">Sign Up</Link></p>
+                        <div className="divider">OR</div>
                         <SocialLogin></SocialLogin>
+                        <p className='text-center text-slate-700 font-semibold font-sans'>New user? <Link className='text-blue-500 hover:underline' to="/sign-up">Sign Up</Link></p>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import CategoryTabs from './CategoryTabs';
 import { Helmet } from 'react-helmet';
 import Stat from './Stat';
 import Carousel from './Carousel';
+import FAQ from './FAQ';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <CategoryTabs></CategoryTabs>
             <Stat></Stat>
             <Carousel></Carousel>
+            <FAQ></FAQ>
         </div>
     );
 };
