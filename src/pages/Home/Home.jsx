@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import Stat from './Stat';
 import Carousel from './Carousel';
 import FAQ from './FAQ';
+import Testimonials from './Testimonials';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             <Stat></Stat>
             <Carousel></Carousel>
             <FAQ></FAQ>
+            <Testimonials></Testimonials>
         </div>
     );
 };
